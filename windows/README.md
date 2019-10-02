@@ -17,17 +17,10 @@ From an elevated shell
 instchoco -backupwithversions
 ```
 ## Install on a new workstation
-Download the packages file
-https://raw.githubusercontent.com/geik/tools/master/windows/PACKAGES.CONFIG  
-
 From an elevated shell
 ```cmd
-choco install -my PACKAGES.CONFIG
-```
-
-## Install multiple version
-```cmd
-choco install -my dotnetcore-sdk --version 2.2.402
+curl https://raw.githubusercontent.com/geik/tools/master/windows/PACKAGES.CONFIG --output packages.config
+choco install -my packages.config
 ```
 
 ## Check
