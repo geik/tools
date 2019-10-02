@@ -21,3 +21,12 @@ From an elevated shell
 ```cmd
 instchoco -y -s https://raw.githubusercontent.com/geik/tools/master/windows/PACKAGES.CONFIG
 ```
+
+## Install multiple version
+```cmd
+choco install -my dotnetcore-sdk --version 2.2.402
+```
+
+## Check
+googlechrome (nog even met het handje)
+jdk11
