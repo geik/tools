@@ -17,9 +17,12 @@ From an elevated shell
 instchoco -backupwithversions
 ```
 ## Install on a new workstation
+Download the packages file
+https://raw.githubusercontent.com/geik/tools/master/windows/PACKAGES.CONFIG  
+
 From an elevated shell
 ```cmd
-instchoco -y -s https://raw.githubusercontent.com/geik/tools/master/windows/PACKAGES.CONFIG
+choco install -my PACKAGES.CONFIG
 ```
 
 ## Install multiple version
