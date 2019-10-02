@@ -5,7 +5,7 @@ See:
 https://chocolatey.org/install  
 And:
 https://chocolatey.org/packages/InstChoco  
-Or:
+Or:  
 From an elevated shell
 ```cmd
 choco install -y instchoco
@@ -23,6 +23,3 @@ curl https://raw.githubusercontent.com/geik/tools/master/windows/PACKAGES.CONFIG
 choco install -my packages.config
 ```
 
-## Check
-googlechrome (nog even met het handje)
-jdk11
