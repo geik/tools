@@ -5,6 +5,11 @@ See:
 https://chocolatey.org/install  
 And:
 https://chocolatey.org/packages/InstChoco
+Or:
+From an elevated shell
+```cmd
+choco install -y instchoco
+```
 
 ## Export an existing workstation's setup
 From an elevated shell
