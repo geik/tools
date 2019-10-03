@@ -12,7 +12,6 @@
     ```
 
 ## Enable Windows features for Hyper-V and Containers
-From an elevated PowerShell window  
 ```powershell
 # elevated powershell
 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
