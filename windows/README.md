@@ -6,33 +6,34 @@ https://chocolatey.org/install
 And:
 https://chocolatey.org/packages/InstChoco  
 Or:  
-From an elevated shell
-```cmd
+```bash
+# elevated cmd
 choco install -y instchoco
 ```
 
 ## Activate Hyper-V
 From an elevated PowerShell window  
 ```powershell
+# elevated powershell
 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
 ```
 
 # Active the Windows Subsystem for Linux
-From an elevated PowerShell window  
 ```powershell
+# elevated powershell
 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
 ```
 
-## Activate Windows
-From an elevated shell  
-```cmd
+## Activate Windows 10
+```bash
+# elevated cmd
 slmgr /ipk W269N-WFGWX-YVC9B-4J6C9-T83GX
 slmgr /skms kms8.msguides.com
 ```
 
 ## Install on a new workstation
-From an elevated shell
-```cmd
+```bash
+# elevated cmd
 curl https://raw.githubusercontent.com/geik/tools/master/windows/PACKAGES.CONFIG --output packages.config
 choco install -my packages.config
 ```
@@ -40,9 +41,20 @@ choco install -my packages.config
 
 ------
 
-## Export an existing workstation's setup
-From an elevated shell
-```cmd
-instchoco -backupwithversions
-```
+## Additional
+- Generate SSH key
+    ```bash
+    # WSL - Ubuntu-18.04
+    ssh-keygen -t rsa -b 4096 -C "your_email@domain.com"
+    ```
+- Upgrade all packages in WSL - Ubuntu-18.04
+    ```bash
+    # WSL - Ubuntu-18.04
+    apt update && apt upgrade
+    ```
+- Export an existing workstation's setup 
+    ```bash
+    # elevated cmd
+    instchoco -backupwithversions
+    ```
 
