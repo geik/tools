@@ -1,15 +1,15 @@
 # Windows workstation setup
 
 ## Prereq - install chocolatey & instchoco
-See:
-https://chocolatey.org/install  
-And:
-https://chocolatey.org/packages/InstChoco  
-Or:  
-```bash
-# elevated cmd
-choco install -y instchoco
-```
+- See:  
+    https://chocolatey.org/install  
+- And:  
+    https://chocolatey.org/packages/InstChoco  
+    Or:  
+    ```bash
+    # elevated cmd
+    choco install -y instchoco
+    ```
 
 ## Activate Hyper-V
 From an elevated PowerShell window  
@@ -31,7 +31,7 @@ slmgr /ipk W269N-WFGWX-YVC9B-4J6C9-T83GX
 slmgr /skms kms8.msguides.com
 ```
 
-## Install on a new workstation
+## Install the software
 ```bash
 # elevated cmd
 curl https://raw.githubusercontent.com/geik/tools/master/windows/PACKAGES.CONFIG --output packages.config
@@ -52,7 +52,7 @@ choco install -my packages.config
     # WSL - Ubuntu-18.04
     apt update && apt upgrade
     ```
-- Export an existing workstation's setup 
+- Export all existing software packages to quickly setup another workstation
     ```bash
     # elevated cmd
     instchoco -backupwithversions
