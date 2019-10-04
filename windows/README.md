@@ -11,11 +11,11 @@
     choco install -y instchoco
     ```
 
-## Activate Hyper-V
-From an elevated PowerShell window  
+## Enable Windows features for Hyper-V and Containers
 ```powershell
 # elevated powershell
 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
+Enable-WindowsOptionalFeature -Online -FeatureName containers –All
 ```
 
 # Active the Windows Subsystem for Linux
