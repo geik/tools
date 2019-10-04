@@ -31,13 +31,33 @@ slmgr /ipk W269N-WFGWX-YVC9B-4J6C9-T83GX
 slmgr /skms kms8.msguides.com
 ```
 
-## Install the software
+## Install all Windows software
 ```bash
 # elevated cmd
 curl https://raw.githubusercontent.com/geik/tools/master/windows/PACKAGES.CONFIG --output packages.config
 choco install -my packages.config
 ```
 
+## Install all Ubuntu packages in WSL - Ubuntu-18.04
+```bash
+# WSL - Ubuntu-18.04
+cd wsl && ./install.sh
+```
+
+## Connect docker & kubectl in WSL to Windows Docker Desktop
+See:   
+    https://nickjanetakis.com/blog/setting-up-docker-for-windows-and-wsl-to-work-flawlessly
+- Windows Docker Desktop
+  - Check `Expose daemon on tcp://localhost:2375 without TLS`  
+- Docker in WSL
+    ```bash
+    echo "export DOCKER_HOST=tcp://localhost:2375" >> ~/.bashrc && source ~/.bashrc
+    ```
+- Kubectl in WSL
+    ```bash
+    mkdir -p ~/.kube
+    ln -sf /mnt/c/users/guus/.kube/config ~/.kube/config
+    ```
 
 ------
 
@@ -47,14 +67,18 @@ choco install -my packages.config
     # WSL - Ubuntu-18.04
     ssh-keygen -t rsa -b 4096 -C "your_email@domain.com"
     ```
-- Upgrade all packages in WSL - Ubuntu-18.04
-    ```bash
-    # WSL - Ubuntu-18.04
-    apt update && apt upgrade
-    ```
-- Export all existing software packages to quickly setup another workstation
+
+----
+## Prepare migration of an existing workstation setup
+- Export all existing Windows software packages
     ```bash
     # elevated cmd
     instchoco -backupwithversions
+    ```
+- Export all existing WSL-Ubuntu software packages
+    ```bash
+    mkdir mypackages
+    apt-clone clone mypackages
+    apt-clone info mypackages/*
     ```
 
