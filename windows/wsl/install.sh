@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+
+# exit on error
+set -e
+
 # upgrade everything
 apt update && apt upgrade -y
 

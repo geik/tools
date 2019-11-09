@@ -38,10 +38,57 @@ curl https://raw.githubusercontent.com/geik/tools/master/windows/PACKAGES.CONFIG
 choco install -my packages.config
 ```
 
+## Do some additional Windows stuff that Chocolatey was unable to do
+- Install Malwarebytes manually
+- Install from the Microsoft Store:
+    - wsl-ubuntu-1804
+    - wsl-alpine
+        `remark: A WSL distro is a userbased setup`
+- Add yourself to the docker-users group
+    ```bash
+    # elevated cmd
+    net localgroup docker-users %USERNAME% /add
+    ```
+
+------
+
+## Additional
+- Take care that your editor does Unix-style line-endings only (LF instead of CRLF)
+- Take care that Git on Windows users Unix-style line-ending only
+    ```bash
+    # git bash
+    git config --global core.autocrlf false
+    ```
+- Use your Windows Homedir as home for git-bash
+    ```bash
+    # elevated cmd
+    setx HOME %USERPROFILE%
+    ```
+- User your Windows Homedir as home within Ubuntu-WSL
+    ```bash
+    # WSL - Ubuntu-18.04
+    sudo nano /etc/passwd
+    ```
+    Change the last line:  
+    ```txt
+    my-ubuntu-user:x:1000:1000:,,,:/home/my-ubuntu-user:/bin/bash
+    ```  
+    To:  
+    ```txt
+    my-ubuntu-user:x:1000:1000:,,,:/mnt/c/users/my-windows-user:/bin/bash
+    ```  
+- Generate SSH key
+    ```bash
+    # WSL - Ubuntu-18.04
+    ssh-keygen -t rsa -b 4096 -C "your_email@domain.com"
+    ```
+- Tell 
+
 ## Install all Ubuntu packages in WSL - Ubuntu-18.04
+Remark: A WSL distro is a userbased setup
 ```bash
 # WSL - Ubuntu-18.04
-cd wsl && ./install.sh
+cd wsl && sudo ./install.sh
 ```
 
 ## Connect docker & kubectl in WSL to Windows Docker Desktop
@@ -59,15 +106,10 @@ See:
     ln -sf /mnt/c/users/guus/.kube/config ~/.kube/config
     ```
 
-------
 
-## Additional
-- Generate SSH key
-    ```bash
-    # WSL - Ubuntu-18.04
-    ssh-keygen -t rsa -b 4096 -C "your_email@domain.com"
-    ```
-
+<br/>
+<br/>
+<br/>
 ----
 ## Prepare migration of an existing workstation setup
 - Export all existing Windows software packages
