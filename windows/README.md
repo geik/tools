@@ -54,10 +54,12 @@ choco install -my packages.config
 
 ## Additional
 - Take care that your editor does Unix-style line-endings only (LF instead of CRLF)
-- Take care that Git on Windows users Unix-style line-ending only
+- Configure Git
     ```bash
     # git bash
     git config --global core.autocrlf false
+    git config --global user.email "your@mail.com"
+    git config --global user.name "Your Name"
     ```
 - Use your Windows Homedir as home for git-bash
     ```bash
@@ -82,7 +84,14 @@ choco install -my packages.config
     # WSL - Ubuntu-18.04
     ssh-keygen -t rsa -b 4096 -C "your_email@domain.com"
     ```
-- Tell 
+- Set a lock password on your screensaver
+    ```bash
+    # elevated powershell
+    Set-ExecutionPolicy Unrestricted
+    ./screensaver.ps1
+    ```
+    Active after re-logon. 
+
 
 ## Install all Ubuntu packages in WSL - Ubuntu-18.04
 Remark: A WSL distro is a userbased setup
