@@ -133,3 +133,8 @@ See:
     apt-clone info mypackages/*
     ```
 
+## The Git one-liner
+```bash
+# git bash
+git add . && git commit -m "added stuff" && git push
+```
