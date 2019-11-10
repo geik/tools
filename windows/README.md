@@ -91,10 +91,15 @@ choco install -my packages.config
     ./screensaver.ps1
     ```
     Active after re-logon. 
+- Enable `Developer Mode`
+    ```bash
+    # elevated cmd
+     reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock" /t REG_DWORD /f /v "AllowDevelopmentWithoutDevLicense" /d "1"
+    ```
 
 
 ## Install all Ubuntu packages in WSL - Ubuntu-18.04
-Remark: A WSL distro is a userbased setup
+Remark: A WSL distro is a userbased setup, so installing software onto it is also (windows) userbased.
 ```bash
 # WSL - Ubuntu-18.04
 cd wsl && sudo ./install.sh
@@ -108,11 +113,6 @@ See:
 - Docker in WSL
     ```bash
     echo "export DOCKER_HOST=tcp://localhost:2375" >> ~/.bashrc && source ~/.bashrc
-    ```
-- Kubectl in WSL
-    ```bash
-    mkdir -p ~/.kube
-    ln -sf /mnt/c/users/guus/.kube/config ~/.kube/config
     ```
 
 
