@@ -54,6 +54,8 @@ choco install -my packages.config
 
 ## Additional
 - Take care that your editor does Unix-style line-endings only (LF instead of CRLF)
+- Take care that your editor does NOT generate a BOM for UTF-8 files
+
 - Configure Git
     ```bash
     # git bash
