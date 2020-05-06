@@ -135,6 +135,12 @@ See:
     apt-clone info mypackages/*
     ```
 
+## Install additional dotnetcore-sdk versions
+
+```cmd
+choco install dotnetcore-sdk --version 2.2.207 -my
+```
+
 ## The Git one-liner
 ```bash
 # git bash
