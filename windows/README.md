@@ -42,7 +42,6 @@ choco install -my packages.config
 - Install Malwarebytes manually
 - Install from the Microsoft Store:
     - wsl-ubuntu-1804
-    - wsl-alpine
         `remark: A WSL distro is a userbased setup`
 - Add yourself to the docker-users group
     ```bash
