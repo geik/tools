@@ -6,5 +6,3 @@ PS C:\agent> Add-Type -AssemblyName System.IO.Compression.FileSystem ; [System.I
 PS C:\agent> .\config.cmd
 
 PS C:\agent> .\run.cmd
-
-j4si3x35csxp6t33qfe2pvl76lz5o3utufytcx2hnzjy4h5mocya
