@@ -145,3 +145,9 @@ choco install dotnetcore-sdk --version 2.2.207 -my
 # git bash
 git add . && git commit -m "added stuff" && git push
 ```
+
+## Force sync of your Microsoft account's password to your local PC
+
+```cmd
+runas /u:123@eikens.com cmd.exe
+```
